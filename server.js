@@ -68,6 +68,8 @@ mongoose.connect(dbConfig.url, {
     console.log('Could not connect to the database', err);
     process.exit();
 });
+const connectDB = require('./server/database/connection')
+connectDB();
 
 app.use("/", require("./routes/index"));
 // app.get('/', (req, res) => {
