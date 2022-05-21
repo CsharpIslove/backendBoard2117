@@ -1,9 +1,8 @@
 const UserModel = require('../models/user')
 // Create and Save a new user
 exports.create = async (req, res) => {
-    if (!req.body.email && !req.body.firstName && !req.body.lastName && !req.body.phone) {
-        //res.status(400).send({ message: "Content can not be empty!" });
-        res.status(400).render('results', {mydata: "Content can not be empty!"})
+    if (!req.body) {
+        res.status(400).send({ message: "Content can not be empty!" });
     }
 
     const user = new UserModel({

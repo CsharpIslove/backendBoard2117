@@ -19,4 +19,4 @@ const tileSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('tiles', tileSchema)
+module.exports = mongoose.model('Tile', tileSchema)
